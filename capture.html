@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide Gratuit — 5 Failles Cyber qui Ruinent les TPE | FLGB Conseils</title>
+<meta name="description" content="Téléchargez gratuitement le guide des 5 failles de cybersécurité qui exposent votre TPE. Par François Briar, expert sécurité 25 ans de terrain.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a2e;background:#060d18;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.nav{background:#1a2e4a;padding:0 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(0,0,0,0.2)}
+.nav-logo{display:flex;align-items:center;gap:12px;padding:14px 0}
+.nav-brand{color:#fff;font-size:15px;font-weight:700;letter-spacing:.3px}
+.nav-brand span{display:block;font-size:10px;font-weight:400;color:#b8c9de;letter-spacing:.5px}
+.hero{padding:80px 24px 70px;text-align:center;background:linear-gradient(160deg,#060d18 0%,#0e1e33 100%);position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;opacity:.07}
+.hero > *:not(.hero-bg){position:relative;z-index:1}
+.badge{display:inline-block;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.5);color:#c9a84c;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 18px;border-radius:20px;margin-bottom:22px}
+.hero h1{color:#fff;font-size:clamp(26px,4vw,46px);font-weight:800;line-height:1.2;max-width:720px;margin:0 auto 18px}
+.hero h1 em{color:#c9a84c;font-style:normal}
+.hero-sub{color:#b8c9de;font-size:clamp(15px,1.8vw,17px);max-width:560px;margin:0 auto 36px;line-height:1.8}
+.form-box{background:rgba(255,255,255,0.04);border:2px solid rgba(201,168,76,0.45);border-radius:16px;padding:40px;max-width:500px;margin:0 auto 36px;backdrop-filter:blur(8px)}
+.form-box h2{color:#fff;font-size:20px;font-weight:700;margin-bottom:8px}
+.form-box p{color:#b8c9de;font-size:14px;margin-bottom:28px;line-height:1.6}
+.form-group{margin-bottom:16px;text-align:left}
+.form-group label{display:block;color:#b8c9de;font-size:13px;font-weight:600;margin-bottom:6px}
+.form-group input{width:100%;padding:14px 16px;background:rgba(255,255,255,0.06);border:1.5px solid rgba(184,201,222,0.25);border-radius:8px;color:#fff;font-size:15px;font-family:inherit;outline:none}
+.form-group input:focus{border-color:#c9a84c}
+.btn-submit{width:100%;padding:16px;background:#c9a84c;color:#1a2e4a;font-size:16px;font-weight:800;border:none;border-radius:8px;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:8px}
+.form-note{color:rgba(184,201,222,0.45);font-size:12px;text-align:center;margin-top:14px}
+.proof-bar{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.proof-item{display:flex;align-items:center;gap:8px;color:#b8c9de;font-size:13px}
+.proof-icon{color:#c9a84c;font-size:16px}
+.section-dark{padding:64px 24px;background:#0e1e33}
+.section-dark-inner{max-width:860px;margin:0 auto}
+.label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c9a84c;margin-bottom:10px}
+h2.title-light{font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;margin-bottom:14px;line-height:1.25}
+.divider{width:44px;height:3px;background:#c9a84c;margin:14px 0 32px}
+.what-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:8px}
+.what-card{background:rgba(255,255,255,0.04);border:1.5px solid rgba(201,168,76,0.35);border-radius:12px;padding:26px}
+.what-card .what-num{color:#c9a84c;font-size:36px;font-weight:900;line-height:1;margin-bottom:10px}
+.what-card h3{color:#fff;font-size:15px;font-weight:700;margin-bottom:8px}
+.what-card p{color:#b8c9de;font-size:13px;line-height:1.7}
+.urgence{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:12px;padding:28px 32px;margin:32px 0;display:flex;gap:18px;align-items:flex-start}
+.urgence-icon{font-size:28px;flex-shrink:0;margin-top:2px}
+.urgence h3{color:#c9a84c;font-size:16px;font-weight:700;margin-bottom:6px}
+.urgence p{color:#b8c9de;font-size:14px;line-height:1.7}
+.section-light{padding:64px 24px;background:#f5f7fa}
+.section-light-inner{max-width:860px;margin:0 auto}
+.bio-mini{display:flex;gap:24px;align-items:center;background:#fff;border:2px solid rgba(201,168,76,0.5);border-radius:12px;padding:28px 32px}
+.bio-avatar{width:80px;height:80px;border-radius:50%;background:#1a2e4a;border:3px solid #c9a84c;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:28px}
+.bio-mini h3{color:#1a2e4a;font-size:17px;font-weight:800;margin-bottom:3px}
+.bio-mini .bio-title{color:#c9a84c;font-size:13px;font-weight:600;margin-bottom:10px}
+.bio-mini p{color:#4b5563;font-size:14px;line-height:1.7}
+.footer{background:#1a2e4a;padding:28px 24px;text-align:center}
+.footer p{color:#b8c9de;font-size:13px}
+.footer a{color:#c9a84c}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-logo"><div class="nav-brand">FLGB Conseils<span>Sécurité · Sûreté · Cybersécurité</span></div></div></nav>
+<section class="hero">
+<div class="hero-bg"><svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg"><circle cx="900" cy="150" r="300" fill="#c9a84c" opacity="0.4"/><circle cx="200" cy="450" r="200" fill="#1a2e4a" opacity="0.6"/></svg></div>
+<div class="badge">📥 Guide gratuit — téléchargement immédiat</div>
+<h1>Les <em>5 Failles Cyber</em> qui exposent votre TPE à une attaque en 2025</h1>
+<p class="hero-sub">Chaque semaine, des TPE françaises perdent des données, de l'argent et leur réputation à cause de ces 5 erreurs. En 10 minutes, sachez si vous êtes exposé.</p>
+<div class="form-box">
+<h2>Recevoir le guide gratuitement</h2>
+<p>Entrez votre prénom et votre email professionnel — je vous envoie le guide immédiatement.</p>
+<form action="https://formspree.io/f/VOTRE_ID" method="POST">
+<div class="form-group"><label for="prenom">Votre prénom</label><input type="text" id="prenom" name="prenom" placeholder="François" required></div>
+<div class="form-group"><label for="email">Votre email professionnel</label><input type="email" id="email" name="email" placeholder="vous@votre-entreprise.fr" required></div>
+<input type="hidden" name="_next" value="https://louisguybriar-c.github.io/flgb-conseils/merci-capture.html">
+<input type="hidden" name="_subject" value="Nouveau lead — Guide 5 Failles Cyber">
+<button type="submit" class="btn-submit">📥 Recevoir le guide maintenant →</button>
+<p class="form-note">🔒 Zéro spam. Vos données ne sont jamais revendues. Désinscription en 1 clic.</p>
+</form>
+</div>
+<div class="proof-bar"><div class="proof-item"><span class="proof-icon">🛡️</span>25 ans d'expertise terrain</div><div class="proof-item"><span class="proof-icon">✅</span>Guide opérationnel, pas théorique</div><div class="proof-item"><span class="proof-icon">⚡</span>Lecture en 10 minutes</div></div>
+</section>
+<section class="section-dark"><div class="section-dark-inner">
+<p class="label">Contenu du guide</p>
+<h2 class="title-light">Ce que vous allez découvrir</h2>
+<div class="divider"></div>
+<div class="what-grid">
+<div class="what-card"><div class="what-num">01</div><h3>Le mot de passe qui ouvre tout</h3><p>La faille n°1 des TPE françaises. Comment les hackers la détectent en moins de 2 minutes — et comment la corriger ce soir.</p></div>
+<div class="what-card"><div class="what-num">02</div><h3>Les mises à jour que personne ne fait</h3><p>80 % des cyberattaques exploitent des failles connues depuis des mois. Votre système est peut-être déjà compromis.</p></div>
+<div class="what-card"><div class="what-num">03</div><h3>La sauvegarde qui ne sauve rien</h3><p>Vous pensez avoir une sauvegarde. Dans 60 % des cas, elle est inutilisable quand vous en avez besoin. Le test à faire maintenant.</p></div>
+<div class="what-card"><div class="what-num">04</div><h3>L'email qui ressemble au vrai</h3><p>Phishing, usurpation d'identité, faux virements. Les 3 signaux d'alerte que vos équipes doivent reconnaître immédiatement.</p></div>
+<div class="what-card"><div class="what-num">05</div><h3>Le smartphone qui trahit tout</h3><p>Vos collaborateurs accèdent à vos données depuis leurs téléphones personnels. Ce que ça implique légalement et techniquement.</p></div>
+<div class="what-card"><div class="what-num">+</div><h3>La checklist d'urgence FLGB</h3><p>12 actions concrètes à réaliser cette semaine pour réduire votre exposition immédiatement. Sans budget, sans technicien.</p></div>
+</div>
+<div class="urgence"><div class="urgence-icon">⚠️</div><div><h3>1 TPE sur 2 ne survivrait pas à une cyberattaque sérieuse</h3><p>Selon l'ANSSI, 60 % des PME victimes d'un ransomware déposent le bilan dans les 18 mois. Ce guide vous aide à ne pas faire partie des statistiques.</p></div></div>
+</div></section>
+<section class="section-light"><div class="section-light-inner">
+<div class="bio-mini"><div class="bio-avatar">👤</div><div><h3>François Briar</h3><div class="bio-title">Expert Sécurité · Sûreté · Cybersécurité — FLGB Conseils</div><p>25 ans d'expérience terrain en sécurité, sûreté et cybersécurité. J'accompagne des dirigeants de TPE/PME qui veulent protéger leur activité sans y passer leur vie. Ce guide résume les erreurs que je vois le plus souvent — et qui coûtent le plus cher.</p></div></div>
+</div></section>
+<footer class="footer"><p>© 2025 FLGB Conseils — <a href="mailto:contact@flgb-conseils.fr">contact@flgb-conseils.fr</a> — <a href="kit-cyber.html">Kit Cybersécurité 997€</a></p></footer>
+</body>
+</html>
