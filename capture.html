@@ -96,5 +96,20 @@ h2.title-light{font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;margin-
 <div class="bio-mini"><div class="bio-avatar">👤</div><div><h3>François Briar</h3><div class="bio-title">Expert Sécurité · Sûreté · Cybersécurité — FLGB Conseils</div><p>25 ans d'expérience terrain en sécurité, sûreté et cybersécurité. J'accompagne des dirigeants de TPE/PME qui veulent protéger leur activité sans y passer leur vie. Ce guide résume les erreurs que je vois le plus souvent — et qui coûtent le plus cher.</p></div></div>
 </div></section>
 <footer class="footer"><p>© 2025 FLGB Conseils — <a href="mailto:contact@flgb-conseils.fr">contact@flgb-conseils.fr</a> — <a href="kit-cyber.html">Kit Cybersécurité 997€</a></p></footer>
+<script>
+document.querySelector('form').addEventListener('submit', async function(e){
+  e.preventDefault();
+  var f = this, btn = f.querySelector('.btn-submit') || f.querySelector('[type="submit"]');
+  if (btn) { btn.disabled = true; btn.textContent = 'Envoi en cours…'; }
+  try {
+    var res = await fetch(f.action, {method:'POST', body:new FormData(f), headers:{'Accept':'application/json'}});
+    if (res.ok) { window.location.href = 'merci-capture.html'; return; }
+    throw new Error('erreur');
+  } catch(err) {
+    if (btn) { btn.disabled = false; btn.textContent = '\u{1F4E5} Recevoir le guide maintenant \u2192'; }
+    alert("Une erreur est survenue. R\u00e9essayez ou \u00e9crivez \u00e0 louisguy.briar@gmail.com");
+  }
+});
+</script>
 </body>
 </html>
