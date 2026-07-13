@@ -97,17 +97,29 @@ h2.title-light{font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;margin-
 </div></section>
 <footer class="footer"><p>© 2025 FLGB Conseils — <a href="mailto:contact@flgb-conseils.fr">contact@flgb-conseils.fr</a> — <a href="kit-cyber.html">Kit Cybersécurité 997€</a></p></footer>
 <script>
+var BREVO_URL = 'https://8aade6f8.sibforms.com/serve/MUIFAA7gRjXejQMIALunc8rIg7uZCp2sbKFNjYwkelFcQN15GUAlTnFXbu_zJCxg3pREQ24yTkUcm5aHBbB2Onn3rK1Nv1-ql5UkpFZBIncW9mRg8BO5_lQpaivvSUS-zb-ZehrFwxqUrdJLBMc-73Prl08cznJSkgIaNudEDopZSmM-axoiSlQgHdrykR0nXj5qm6eTM2G883Dx1A==';
 document.querySelector('form').addEventListener('submit', async function(e){
   e.preventDefault();
   var f = this, btn = f.querySelector('.btn-submit') || f.querySelector('[type="submit"]');
-  if (btn) { btn.disabled = true; btn.textContent = 'Envoi en cours…'; }
+  if (btn) { btn.disabled = true; btn.textContent = 'Envoi en cours\u2026'; }
+  var prenom = (f.querySelector('[name="prenom"]')||{}).value || '';
+  var email = (f.querySelector('[name="email"]')||{}).value || '';
+  // 1. Brevo : ajoute le contact a la liste et declenche la sequence
+  try {
+    var bd = new URLSearchParams();
+    bd.set('EMAIL', email);
+    bd.set('PRENOM', prenom);
+    bd.set('email_address_check', '');
+    bd.set('locale', 'fr');
+    await fetch(BREVO_URL + '?isAjax=1', {method:'POST', body: bd, mode:'no-cors'});
+  } catch(err) {}
+  // 2. Formspree : notification Gmail
   try {
     var res = await fetch(f.action, {method:'POST', body:new FormData(f), headers:{'Accept':'application/json'}});
     if (res.ok) { window.location.href = 'merci-capture.html'; return; }
     throw new Error('erreur');
   } catch(err) {
-    if (btn) { btn.disabled = false; btn.textContent = '\u{1F4E5} Recevoir le guide maintenant \u2192'; }
-    alert("Une erreur est survenue. R\u00e9essayez ou \u00e9crivez \u00e0 louisguy.briar@gmail.com");
+    window.location.href = 'merci-capture.html';
   }
 });
 </script>
