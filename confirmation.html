@@ -8,20 +8,35 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a2e;background:#060d18;line-height:1.6}
 a{text-decoration:none;color:inherit}
+
 .nav{background:#1a2e4a;padding:0 40px;display:flex;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,0.2)}
 .nav-logo{padding:14px 0}
 .nav-brand{color:#fff;font-size:15px;font-weight:700}
 .nav-brand span{display:block;font-size:10px;font-weight:400;color:#b8c9de;letter-spacing:.5px}
+@media(max-width:600px){.nav{padding:0 20px}}
+
+/* HERO */
 .hero{padding:90px 24px 70px;text-align:center;background:linear-gradient(160deg,#060d18 0%,#0e1e33 100%)}
+.trophy{font-size:80px;margin-bottom:24px;display:block}
 .hero h1{color:#fff;font-size:clamp(26px,4vw,42px);font-weight:800;line-height:1.2;margin-bottom:16px}
 .hero h1 em{color:#c9a84c;font-style:normal}
 .hero-sub{color:#b8c9de;font-size:16px;max-width:520px;margin:0 auto 36px;line-height:1.8}
+
 .confirm-box{background:rgba(201,168,76,0.08);border:2px solid rgba(201,168,76,0.4);border-radius:14px;padding:32px 36px;max-width:520px;margin:0 auto;text-align:left}
-.confirm-box h2{color:#c9a84c;font-size:17px;font-weight:700;margin-bottom:18px}
+.confirm-box h2{color:#c9a84c;font-size:17px;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:10px}
 .confirm-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;color:#b8c9de;font-size:14px;line-height:1.6}
+.confirm-row:last-child{margin-bottom:0}
 .confirm-row .icon{color:#c9a84c;font-size:18px;flex-shrink:0;margin-top:1px}
+.btn-download{display:inline-block;background:#c9a84c;color:#1a2e4a;font-size:16px;font-weight:800;padding:16px 40px;border-radius:10px;margin-top:8px;transition:all .2s;letter-spacing:.3px}
+.btn-download:hover{background:#b8963c;transform:translateY(-2px)}
+
+/* PROCHAINES ÉTAPES */
 .steps-section{padding:64px 24px;background:#0e1e33}
 .steps-inner{max-width:780px;margin:0 auto}
+.label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c9a84c;margin-bottom:10px}
+h2.title-light{font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;margin-bottom:14px}
+.divider{width:44px;height:3px;background:#c9a84c;margin:14px 0 32px}
+
 .timeline{display:flex;flex-direction:column;gap:0}
 .timeline-item{display:flex;gap:0;position:relative}
 .timeline-left{display:flex;flex-direction:column;align-items:center;width:60px;flex-shrink:0}
@@ -32,41 +47,85 @@ a{text-decoration:none;color:inherit}
 .timeline-day{color:#c9a84c;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
 .timeline-content h3{color:#fff;font-size:16px;font-weight:700;margin-bottom:8px}
 .timeline-content p{color:#b8c9de;font-size:14px;line-height:1.7}
+
+/* CONTACT */
 .contact-section{padding:56px 24px;background:#f5f7fa}
 .contact-inner{max-width:680px;margin:0 auto;text-align:center}
+h2.title{font-size:clamp(20px,2.5vw,28px);font-weight:800;color:#1a2e4a;margin-bottom:14px}
 .contact-box{background:#fff;border:2px solid rgba(201,168,76,0.5);border-radius:12px;padding:32px;margin-top:28px;display:flex;gap:20px;align-items:center;text-align:left}
+@media(max-width:600px){.contact-box{flex-direction:column;text-align:center}}
 .contact-avatar{width:72px;height:72px;border-radius:50%;background:#1a2e4a;border:3px solid #c9a84c;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
-.btn-contact{display:inline-block;background:#1a2e4a;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:8px}
+.contact-box h3{color:#1a2e4a;font-size:16px;font-weight:700;margin-bottom:4px}
+.contact-box .subtitle{color:#c9a84c;font-size:13px;font-weight:600;margin-bottom:10px}
+.contact-box p{color:#4b5563;font-size:14px;line-height:1.65;margin-bottom:14px}
+.btn-contact{display:inline-block;background:#1a2e4a;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:8px;transition:all .2s}
+.btn-contact:hover{background:#0e1e33;transform:translateY(-1px)}
+
+/* SHARE */
+.share-section{padding:48px 24px;background:#1a2e4a;text-align:center}
+.share-section p{color:#b8c9de;font-size:15px;max-width:500px;margin:0 auto 20px;line-height:1.7}
+.share-btn{display:inline-block;background:transparent;border:1.5px solid rgba(201,168,76,0.5);color:#c9a84c;font-size:14px;font-weight:700;padding:12px 24px;border-radius:8px;transition:all .2s}
+.share-btn:hover{background:rgba(201,168,76,0.1)}
+
 .footer{background:#0e1e33;padding:24px;text-align:center}
 .footer p{color:#6b7280;font-size:13px}
 .footer a{color:#c9a84c}
 </style>
 </head>
 <body>
+
 <nav class="nav">
   <div class="nav-logo">
     <div class="nav-brand">FLGB Conseils<span>Sécurité · Sûreté · Cybersécurité</span></div>
   </div>
 </nav>
+
+<!-- CONFIRMATION HERO -->
 <section class="hero">
-  <span style="font-size:80px;margin-bottom:24px;display:block">🏆</span>
+  <span class="trophy">🏆</span>
   <h1>Bienvenue dans le Kit !<br>Votre commande est <em>confirmée</em></h1>
   <p class="hero-sub">Merci pour votre confiance. Vous venez de prendre la meilleure décision pour protéger votre activité. Voici ce qui se passe maintenant.</p>
+
   <div class="confirm-box">
     <h2>📋 Récapitulatif de votre commande</h2>
-    <div class="confirm-row"><span class="icon">📦</span><div><strong style="color:#fff">Kit Clé en Main Cybersécurité TPE</strong><br>Audit + Plan d'action + Formation + Suivi 30 jours</div></div>
-    <div class="confirm-row"><span class="icon">💳</span><div><strong style="color:#fff">997€ HT</strong> — Paiement Stripe sécurisé</div></div>
-    <div class="confirm-row"><span class="icon">📧</span><div>Un email de confirmation arrive dans quelques minutes avec votre reçu Stripe.</div></div>
-    <div class="confirm-row"><span class="icon">🔒</span><div>Garantie satisfait ou remboursé 14 jours — sans justification.</div></div>
+    <div class="confirm-row">
+      <span class="icon">📦</span>
+      <div><strong style="color:#fff">Kit Clé en Main Cybersécurité TPE</strong><br>Audit + Plan d'action + Formation + Suivi 30 jours</div>
+    </div>
+    <div class="confirm-row">
+      <span class="icon">💳</span>
+      <div><strong style="color:#fff">997€ HT</strong> — Paiement Stripe sécurisé</div>
+    </div>
+    <div class="confirm-row">
+      <span class="icon">📧</span>
+      <div>Un email de confirmation arrive dans quelques minutes avec votre reçu Stripe.</div>
+    </div>
+    <div class="confirm-row">
+      <span class="icon">🔒</span>
+      <div>Garantie satisfait ou remboursé 14 jours — sans justification.</div>
+    </div>
+  </div>
+
+  <!-- DOWNLOAD -->
+  <div style="max-width:520px;margin:28px auto 0;text-align:center">
+    <a href="FLGB_Kit_Cyber_Package_Complet_v2.pdf" download class="btn-download">⬇ Télécharger votre Kit Cyber</a>
+    <p style="color:rgba(184,201,222,0.5);font-size:12px;margin-top:10px">PDF · Accès immédiat</p>
   </div>
 </section>
+
+<!-- TIMELINE -->
 <section class="steps-section">
   <div class="steps-inner">
-    <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c9a84c;margin-bottom:10px">Ce qui se passe maintenant</p>
-    <h2 style="font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;margin-bottom:32px">Vos prochaines étapes</h2>
+    <p class="label">Ce qui se passe maintenant</p>
+    <h2 class="title-light">Vos prochaines étapes</h2>
+    <div class="divider"></div>
+
     <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-left"><div class="timeline-dot">1</div><div class="timeline-line"></div></div>
+        <div class="timeline-left">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-line"></div>
+        </div>
         <div class="timeline-content">
           <div class="timeline-day">Aujourd'hui — sous 2h</div>
           <h3>François vous contacte</h3>
@@ -74,7 +133,10 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-left"><div class="timeline-dot">2</div><div class="timeline-line"></div></div>
+        <div class="timeline-left">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-line"></div>
+        </div>
         <div class="timeline-content">
           <div class="timeline-day">Jour 1–2</div>
           <h3>Audit complet de votre système</h3>
@@ -82,7 +144,10 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-left"><div class="timeline-dot">3</div><div class="timeline-line"></div></div>
+        <div class="timeline-left">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-line"></div>
+        </div>
         <div class="timeline-content">
           <div class="timeline-day">Jour 3</div>
           <h3>Remise du plan d'action</h3>
@@ -90,7 +155,10 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-left"><div class="timeline-dot">4</div><div class="timeline-line"></div></div>
+        <div class="timeline-left">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-line"></div>
+        </div>
         <div class="timeline-content">
           <div class="timeline-day">Jour 4</div>
           <h3>Politique de sécurité + Formation équipe</h3>
@@ -98,7 +166,10 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-left"><div class="timeline-dot">5</div><div class="timeline-line"></div></div>
+        <div class="timeline-left">
+          <div class="timeline-dot">5</div>
+          <div class="timeline-line"></div>
+        </div>
         <div class="timeline-content">
           <div class="timeline-day">Jour 5 — puis J+30</div>
           <h3>Bilan final + Suivi 30 jours</h3>
@@ -108,22 +179,33 @@ a{text-decoration:none;color:inherit}
     </div>
   </div>
 </section>
+
+<!-- CONTACT -->
 <section class="contact-section">
   <div class="contact-inner">
-    <h2 style="font-size:clamp(20px,2.5vw,28px);font-weight:800;color:#1a2e4a">Contactez François directement</h2>
+    <p class="label" style="color:#c9a84c;text-align:center">Une question avant qu'on démarre ?</p>
+    <h2 class="title">Contactez François directement</h2>
     <div class="contact-box">
       <div class="contact-avatar">👤</div>
       <div>
-        <h3 style="color:#1a2e4a;font-size:16px;font-weight:700;margin-bottom:4px">François Briar</h3>
-        <div style="color:#c9a84c;font-size:13px;font-weight:600;margin-bottom:10px">Expert Sécurité · Sûreté · Cybersécurité</div>
-        <p style="color:#4b5563;font-size:14px;line-height:1.65;margin-bottom:14px">Je réponds personnellement à chaque client. Si vous avez une question avant notre premier échange, écrivez-moi — je réponds sous 4h ouvrées.</p>
+        <h3>François Briar</h3>
+        <div class="subtitle">Expert Sécurité · Sûreté · Cybersécurité</div>
+        <p>Je réponds personnellement à chaque client. Si vous avez une question avant notre premier échange, écrivez-moi — je réponds sous 4h ouvrées.</p>
         <a href="mailto:contact@flgb-conseils.fr" class="btn-contact">📧 contact@flgb-conseils.fr</a>
       </div>
     </div>
   </div>
 </section>
+
+<!-- PARTAGE -->
+<section class="share-section">
+  <p>Vous connaissez un autre dirigeant de TPE qui devrait protéger son activité ? Partagez-lui cette page.</p>
+  <a href="kit-cyber.html" class="share-btn">Partager le Kit Cybersécurité →</a>
+</section>
+
 <footer class="footer">
   <p>© 2025 FLGB Conseils — <a href="mailto:contact@flgb-conseils.fr">contact@flgb-conseils.fr</a></p>
 </footer>
+
 </body>
 </html>
