@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Votre guide est pr�t — FLGB Conseils</title>
+<title>Votre guide est prêt — FLGB Conseils</title>
 <meta name="robots" content="noindex">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -53,7 +53,7 @@ a{text-decoration:none;color:inherit}
 
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-/* S�PARATEUR */
+/* SÉPARATEUR */
 .sep{text-align:center;padding:40px 24px;background:#0e1e33}
 .sep-line{display:flex;align-items:center;gap:16px;max-width:500px;margin:0 auto}
 .sep-line::before,.sep-line::after{content:"";flex:1;height:1px;background:rgba(201,168,76,0.25)}
@@ -85,7 +85,7 @@ h2.title-light{font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;margin-
 .btn-outline:hover{background:rgba(255,255,255,0.05)}
 .price-guarantee{color:#6b7280;font-size:12px;margin-top:14py}
 
-/* �TAPES */
+/* ÉTAPES */
 .steps{padding:64px 24px;background:#f5f7fa}
 .steps-inner{max-width:760px;margin:0 auto}
 h2.title{font-size:clamp(20px,2.5vw,28px);font-weight:800;color:#1a2e4a;margin-bottom:14px}
@@ -105,17 +105,17 @@ h2.title{font-size:clamp(20px,2.5vw,28px);font-weight:800;color:#1a2e4a;margin-b
 
 <nav class="nav">
   <div class="nav-logo">
-    <div class="nav-brand">FLGB Conseils<span>S�curit� � S�ret� � Cybers�curit�</span></div>
+    <div class="nav-brand">FLGB Conseils<span>Sécurité · Sûreté · Cybersécurité</span></div>
   </div>
 </nav>
 
 <!-- CONFIRMATION -->
 <section class="confirm">
   <div class="confirm-icon">✅</div>
-  <h1>Votre guide est pr�t —<br><em>t�l�chargez-le maintenant</em></h1>
-  <p>Acc�dez imm�diatement aux 5 failles cyber que les hackers exploitent le plus souvent sur les TPE — et aux actions concr�tes pour vous en prot�ger.</p>
-  <a href="https://louisguybriar-c.github.io/flgb-conseils/guide-5-failles-cyber-tpe.pdf" class="btn-download" download>⬇ T�l�charger le Guide Gratuit</a>
-  <div class="confirm-note" style="margin-top:24px">�� Fichier PDF s�curis� � Aucune installation requise � Lecture imm�diate</div>
+  <h1>Votre guide est prêt —<br><em>téléchargez-le maintenant</em></h1>
+  <p>Accédez immédiatement aux 5 failles cyber que les hackers exploitent le plus souvent sur les TPE — et aux actions concrètes pour vous en protéger.</p>
+  <a href="https://louisguybriar-c.github.io/flgb-conseils/guide-5-failles-cyber-tpe.pdf" class="btn-download" download>⬇ Télécharger le Guide Gratuit</a>
+  <div class="confirm-note" style="margin-top:24px">🔒 Fichier PDF sécurisé · Aucune installation requise · Lecture immédiate</div>
 </section>
 
 <!-- CHATBOT QUALIFICATION -->
@@ -123,8 +123,8 @@ h2.title{font-size:clamp(20px,2.5vw,28px);font-weight:800;color:#1a2e4a;margin-b
   <div class="chatbot-inner">
     <div class="chatbot-intro">
       <p class="label">⏱ 60 secondes</p>
-      <h2>Pendant que vous attendez — o� en �tes-vous vraiment ?</h2>
-      <p>4 questions pour �valuer votre niveau d'exposition r�elle.</p>
+      <h2>Pendant que vous attendez — où en êtes-vous vraiment ?</h2>
+      <p>4 questions pour évaluer votre niveau d'exposition réelle.</p>
     </div>
     <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
     <div class="chat-window" id="chat-window"></div>
@@ -132,66 +132,66 @@ h2.title{font-size:clamp(20px,2.5vw,28px);font-weight:800;color:#1a2e4a;margin-b
   </div>
 </section>
 
-<!-- S�PARATEUR (affich� dynamiquement) -->
+<!-- SÉPARATEUR (affiché dynamiquement) -->
 <div class="sep" id="sep-dynamic" style="display:none">
   <div class="sep-line">
     <span class="sep-text" id="sep-text">Ce qu'il vous faut</span>
   </div>
 </div>
 
-<!-- UPSELL (affich� si lead chaud) -->
+<!-- UPSELL (affiché si lead chaud) -->
 <section class="upsell" id="upsell" style="display:none">
   <div class="upsell-inner">
     <p class="label" id="upsell-label">La solution faite pour vous</p>
-    <h2 class="title-light" id="upsell-title">Vous voulez ne plus avoir � vous inqui�ter de la cybers�curit� de votre TPE ?</h2>
+    <h2 class="title-light" id="upsell-title">Vous voulez ne plus avoir à vous inquiéter de la cybersécurité de votre TPE ?</h2>
     <div class="divider"></div>
 
     <div class="kit-teaser">
       <div class="kit-left">
-        <p class="lead-light">Le guide vous dit <em style="color:#c9a84c">o� vous �tes expos�</em>. Le Kit Cl� en Main vous dit <em style="color:#c9a84c">exactement quoi faire</em> — et je le fais avec vous.</p>
+        <p class="lead-light">Le guide vous dit <em style="color:#c9a84c">où vous êtes exposé</em>. Le Kit Clé en Main vous dit <em style="color:#c9a84c">exactement quoi faire</em> — et je le fais avec vous.</p>
         <ul class="kit-points">
-          <li>Audit complet de votre syst�me en 48h</li>
-          <li>Plan d'action prioris� adapt� � votre activit�</li>
-          <li>Mise en conformit� RGPD & NIS2</li>
-          <li>Politique de s�curit� r�dig�e et pr�te � signer</li>
-          <li>Formation de vos �quipes (1h, en visio)</li>
-          <li>Suivi 30 jours apr�s livraison</li>
+          <li>Audit complet de votre système en 48h</li>
+          <li>Plan d'action priorisé adapté à votre activité</li>
+          <li>Mise en conformité RGPD & NIS2</li>
+          <li>Politique de sécurité rédigée et prête à signer</li>
+          <li>Formation de vos équipes (1h, en visio)</li>
+          <li>Suivi 30 jours après livraison</li>
         </ul>
-        <p style="color:#9ca3af;font-size:13px">R�sultat : en 5 jours, votre TPE passe d'expos�e � prot�g�e. Sans recruter un DSI. Sans y passer des semaines.</p>
+        <p style="color:#9ca3af;font-size:13px">Résultat : en 5 jours, votre TPE passe d'exposée à protégée. Sans recruter un DSI. Sans y passer des semaines.</p>
       </div>
       <div class="kit-right">
         <div class="price-card">
           <div class="price-label-sm">Investissement unique</div>
           <div class="price-big">997€</div>
-          <div class="price-detail">HT � Paiement s�curis� par Stripe</div>
-          <a href="https://buy.stripe.com/00w7sEfVb4qxgWEeP85Ne01" class="btn-gold">S�curiser ma TPE maintenant →</a>
-          <a href="kit-cyber.html" class="btn-outline">Voir le d�tail du kit</a>
-          <p class="price-guarantee">�� Satisfait ou rembours� 14 jours</p>
+          <div class="price-detail">HT · Paiement sécurisé par Stripe</div>
+          <a href="https://buy.stripe.com/00w7sEfVb4qxgWEeP85Ne01" class="btn-gold">Sécuriser ma TPE maintenant →</a>
+          <a href="kit-cyber.html" class="btn-outline">Voir le détail du kit</a>
+          <p class="price-guarantee">🔒 Satisfait ou remboursé 14 jours</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EN ATTENDANT (affich� si lead froid) -->
+<!-- EN ATTENDANT (affiché si lead froid) -->
 <section class="steps" id="steps" style="display:none">
   <div class="steps-inner">
     <p class="label" style="color:#c9a84c">En attendant le guide</p>
-    <h2 class="title">3 choses � faire maintenant</h2>
+    <h2 class="title">3 choses à faire maintenant</h2>
     <div class="divider" style="background:#c9a84c"></div>
     <div class="steps-list">
       <div class="step">
         <div class="step-num">1</div>
         <div>
-          <h3>V�rifiez vos mots de passe</h3>
-          <p>Ouvrez Chrome ou Firefox → Param�tres → Mots de passe. Si vous voyez des alertes "compromis" ou des mots de passe dupliqu�s — c'est urgent.</p>
+          <h3>Vérifiez vos mots de passe</h3>
+          <p>Ouvrez Chrome ou Firefox → Paramètres → Mots de passe. Si vous voyez des alertes "compromis" ou des mots de passe dupliqués — c'est urgent.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div>
           <h3>Testez votre sauvegarde</h3>
-          <p>Essayez de restaurer un fichier depuis votre sauvegarde. Si vous n'avez pas de sauvegarde, ou si vous ne savez pas comment restaurer — c'est le premier risque � corriger.</p>
+          <p>Essayez de restaurer un fichier depuis votre sauvegarde. Si vous n'avez pas de sauvegarde, ou si vous ne savez pas comment restaurer — c'est le premier risque à corriger.</p>
         </div>
       </div>
       <div class="step">
@@ -206,40 +206,40 @@ h2.title{font-size:clamp(20px,2.5vw,28px);font-weight:800;color:#1a2e4a;margin-b
 </section>
 
 <footer class="footer">
-  <p>� 2026 FLGB Conseils — <a href="mailto:louisguy.briar@gmail.com">louisguy.briar@gmail.com</a> — <a href="kit-cyber.html">Kit Cybers�curit� 997€</a></p>
+  <p>© 2026 FLGB Conseils — <a href="mailto:louisguy.briar@gmail.com">louisguy.briar@gmail.com</a> — <a href="kit-cyber.html">Kit Cybersécurité 997€</a></p>
 </footer>
 
 <script>
 const questions = [
   {
-    q: "Votre entreprise a-t-elle d�j� subi un incident cyber — piratage, ransomware, phishing r�ussi ?",
+    q: "Votre entreprise a-t-elle déjà subi un incident cyber — piratage, ransomware, phishing réussi ?",
     choices: [
-      { label: "Oui, on a d�j� eu un probl�me", score: 1 },
-      { label: "Pas � ma connaissance", score: 0 },
+      { label: "Oui, on a déjà eu un problème", score: 1 },
+      { label: "Pas à ma connaissance", score: 0 },
       { label: "Je ne sais pas vraiment", score: 0 }
     ]
   },
   {
-    q: "Si vos fichiers ou votre messagerie �taient bloqu�s demain matin, vous auriez quoi comme plan ?",
+    q: "Si vos fichiers ou votre messagerie étaient bloqués demain matin, vous auriez quoi comme plan ?",
     choices: [
-      { label: "Honn�tement, aucun plan pr�vu", score: 1 },
+      { label: "Honnêtement, aucun plan prévu", score: 1 },
       { label: "On improviserait avec les moyens du bord", score: 1 },
-      { label: "On a une proc�dure de sauvegarde en place", score: 0 }
+      { label: "On a une procédure de sauvegarde en place", score: 0 }
     ]
   },
   {
     q: "Combien de personnes travaillent dans votre entreprise ?",
     choices: [
       { label: "Je travaille seul(e)", score: 1 },
-      { label: "2 � 10 personnes", score: 1 },
+      { label: "2 à 10 personnes", score: 1 },
       { label: "Plus de 10 personnes", score: 0 }
     ]
   },
   {
-    q: "Avez-vous d�j� envisag� de faire appel � un expert pour s�curiser votre activit� ?",
+    q: "Avez-vous déjà envisagé de faire appel à un expert pour sécuriser votre activité ?",
     choices: [
-      { label: "Oui, c'est exactement pour �a que je suis l�", score: 2 },
-      { label: "J'y pense s�rieusement", score: 1 },
+      { label: "Oui, c'est exactement pour ça que je suis là", score: 2 },
+      { label: "J'y pense sérieusement", score: 1 },
       { label: "Pas encore vraiment", score: 0 }
     ]
   }
@@ -253,7 +253,7 @@ function addBotMessage(text) {
   const win = document.getElementById('chat-window');
   const div = document.createElement('div');
   div.className = 'chat-msg';
-  div.innerHTML = '<div class="chat-avatar">��️</div><div class="chat-bubble">' + text + '</div>';
+  div.innerHTML = '<div class="chat-avatar">🛡️</div><div class="chat-bubble">' + text + '</div>';
   win.appendChild(div);
   win.scrollTop = win.scrollHeight;
 }
@@ -262,7 +262,7 @@ function addUserMessage(text) {
   const win = document.getElementById('chat-window');
   const div = document.createElement('div');
   div.className = 'chat-msg chat-user-msg';
-  div.innerHTML = '<div class="chat-avatar" style="background:#1a2e4a;font-size:13px">��</div><div class="chat-bubble">' + text + '</div>';
+  div.innerHTML = '<div class="chat-avatar" style="background:#1a2e4a;font-size:13px">👤</div><div class="chat-bubble">' + text + '</div>';
   win.appendChild(div);
   win.scrollTop = win.scrollHeight;
 }
@@ -319,12 +319,12 @@ function showResult() {
 
   if (isHot) {
     setTimeout(function() {
-      addBotMessage("Votre profil est clair : vous �tes expos� et vous en �tes conscient. Le Kit Cl� en Main est exactement ce qu'il vous faut. Je vous le montre juste en dessous ��");
+      addBotMessage("Votre profil est clair : vous êtes exposé et vous en êtes conscient. Le Kit Clé en Main est exactement ce qu'il vous faut. Je vous le montre juste en dessous 👇");
       setTimeout(function() {
         document.getElementById('sep-text').textContent = 'Fait pour votre situation';
         document.getElementById('sep-dynamic').style.display = 'block';
-        document.getElementById('upsell-label').textContent = 'La solution adapt�e � votre profil';
-        document.getElementById('upsell-title').textContent = 'Votre situation est courante. Elle se r�gle en 5 jours.';
+        document.getElementById('upsell-label').textContent = 'La solution adaptée à votre profil';
+        document.getElementById('upsell-title').textContent = 'Votre situation est courante. Elle se règle en 5 jours.';
         document.getElementById('upsell').style.display = 'block';
         setTimeout(function() {
           document.getElementById('upsell').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -333,7 +333,7 @@ function showResult() {
     }, 400);
   } else {
     setTimeout(function() {
-      addBotMessage("Votre guide va tout vous expliquer. Lisez-le attentivement — il contient les premi�res actions concr�tes. Et si vous avez des questions en cours de route, n'h�sitez pas � me r�pondre directement.");
+      addBotMessage("Votre guide va tout vous expliquer. Lisez-le attentivement — il contient les premières actions concrètes. Et si vous avez des questions en cours de route, n'hésitez pas à me répondre directement.");
       setTimeout(function() {
         document.getElementById('sep-text').textContent = 'En attendant le guide';
         document.getElementById('sep-dynamic').style.display = 'block';
@@ -343,9 +343,9 @@ function showResult() {
   }
 }
 
-// D�marrage avec d�lai pour laisser la page se charger
+// Démarrage avec délai pour laisser la page se charger
 setTimeout(function() {
-  addBotMessage("Votre guide est pr�t � t�l�charger ! Pendant que vous y �tes, 4 questions rapides pour voir o� vous en �tes vraiment c�t� cyber. 60 secondes ⏱️");
+  addBotMessage("Votre guide est prêt à télécharger ! Pendant que vous y êtes, 4 questions rapides pour voir où vous en êtes vraiment côté cyber. 60 secondes ⏱️");
   setTimeout(function() { showQuestion(0); }, 900);
 }, 600);
 </script>
