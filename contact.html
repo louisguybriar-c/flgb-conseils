@@ -156,26 +156,26 @@ footer{background:#111d2c;padding:48px 40px 24px}
 </section>
 <div class="dark-section">
   <div class="dark-section-inner">
-    <form class="contact-form" onsubmit="event.preventDefault();this.innerHTML='<p style=\'color:#c9a84c;font-size:17px;font-weight:700;padding:20px 0;text-align:center\'>✓ Message envoyé. Nous vous répondrons sous 48h.</p>'">
+    <form class="contact-form" id="contact-form">
       <div class="form-row">
-        <input type="text" placeholder="Prénom *" required>
-        <input type="text" placeholder="Nom *" required>
+        <input type="text" id="prenom" name="prenom" placeholder="Prénom *" autocomplete="given-name" required>
+        <input type="text" id="nom" name="nom" placeholder="Nom *" autocomplete="family-name" required>
       </div>
-      <input type="email" placeholder="Email professionnel *" required>
-      <input type="tel" placeholder="Téléphone (optionnel)">
-      <input type="text" placeholder="Nom de l'entreprise">
-      <select>
+      <input type="email" id="email" name="email" placeholder="Email professionnel *" autocomplete="email" required>
+      <input type="tel" id="telephone" name="telephone" placeholder="Téléphone (optionnel)" autocomplete="tel">
+      <input type="text" id="entreprise" name="entreprise" placeholder="Nom de l'entreprise" autocomplete="organization">
+      <select id="objet" name="objet" required>
         <option value="" disabled selected>Objet de la demande</option>
         <option>Audit cybersécurité</option>
         <option>Conformité RGPD / NIS2</option>
         <option>Sécurité physique & sûreté</option>
         <option>Vidéoprotection</option>
-        <option>Kit Cybersécurité (97€)</option>
-        <option>Pack Expert (490€)</option>
-        <option>Pack Mensuel (650€/mois)</option>
+        <option>Kit Cybersécurité (997€)</option>
+        <option>Pack Expert (3 200€)</option>
+        <option>Pack Mensuel (4 500€/mois)</option>
         <option>Autre</option>
       </select>
-      <textarea placeholder="Décrivez brièvement votre situation ou votre question..."></textarea>
+      <textarea id="message" name="message" placeholder="Décrivez brièvement votre situation ou votre question..." required></textarea>
       <button type="submit" class="btn btn-gold" style="width:100%;padding:15px;font-size:15px">Envoyer ma demande</button>
       <p class="form-note">Vos informations restent strictement confidentielles et ne sont pas transmises à des tiers.</p>
     </form>
@@ -207,5 +207,26 @@ footer{background:#111d2c;padding:48px 40px 24px}
   </div>
   <div class="footer-bottom">© 2026 FLGB Conseils — François Louis Guy BRIAR. Tous droits réservés.</div>
 </footer>
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  if (!this.reportValidity()) return;
+  const value = id => document.getElementById(id).value.trim();
+  const subject = 'Demande FLGB Conseils — ' + value('objet');
+  const body = [
+    'Prénom : ' + value('prenom'),
+    'Nom : ' + value('nom'),
+    'Email : ' + value('email'),
+    'Téléphone : ' + (value('telephone') || 'Non renseigné'),
+    'Entreprise : ' + (value('entreprise') || 'Non renseignée'),
+    'Objet : ' + value('objet'),
+    '',
+    'Message :',
+    value('message')
+  ].join('\n');
+  window.location.href = 'mailto:louisguy.briar@gmail.com?subject=' +
+    encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
+</script>
 </body>
 </html>
