@@ -194,6 +194,15 @@
   /* ---------- panier ---------- */
   .toast{position:fixed;bottom:1.4rem;left:50%;transform:translateX(-50%) translateY(150%);background:var(--encre);color:#fff;padding:.75rem 1.4rem;border-radius:2rem;font-size:.85rem;letter-spacing:.04em;transition:transform .3s;z-index:80}
   .toast.visible{transform:translateX(-50%) translateY(0)}
+
+  /* ---------- navigation par vues ---------- */
+  .page-section{display:none}
+  .page-section.page-active{display:block}
+  body.vue-interne .hero,
+  body.vue-interne .promesse{display:none}
+  footer{display:none}
+  body.vue-interne footer{display:block}
+  .nav ul a[aria-current="page"]{border-color:var(--or);color:var(--vert-fonce)}
 </style>
 
 <header>
@@ -254,7 +263,7 @@
   </div>
 </div>
 
-<section id="friperie">
+<section id="friperie" class="page-section">
   <div class="wrap">
     <p class="sur-titre">Collection friperie</p>
     <h2 class="titre">Les pièces du moment</h2>
@@ -323,7 +332,7 @@
 </section>
 
 
-<section class="silhouettes" id="silhouettes" style="background:#fff">
+<section class="silhouettes page-section" id="silhouettes" style="background:#fff">
   <div class="wrap">
     <p class="sur-titre">Silhouettes complètes</p>
     <h2 class="titre">Des tenues pensées, pas des pièces isolées</h2>
@@ -349,7 +358,7 @@
   </div>
 </section>
 
-<section class="upcy" id="upcycling">
+<section class="upcy page-section" id="upcycling">
   <div class="wrap">
     <p class="sur-titre">Créations upcycling</p>
     <h2 class="titre">Transformées à l'atelier, numérotées, uniques</h2>
@@ -363,7 +372,7 @@
   </div>
 </section>
 
-<section class="demarche" id="demarche">
+<section class="demarche page-section" id="demarche">
   <div class="wrap">
     <div class="demarche-visuel" role="img" aria-label="Emplacement pour une photo de l'atelier ou du tri"></div>
     <div>
@@ -379,7 +388,7 @@
   </div>
 </section>
 
-<section id="contact" class="contact">
+<section id="contact" class="contact page-section">
   <div class="wrap contact-in">
     <div>
       <p class="sur-titre">Contact</p>
@@ -429,6 +438,64 @@
 <div class="toast" id="toast">Pièce réservée dans votre panier</div>
 
 <script>
+
+  /* ---------- navigation : accueil + rubriques affichées séparément ---------- */
+  const vuesSekory = new Set(['friperie', 'silhouettes', 'upcycling', 'demarche', 'contact']);
+  const sectionsSekory = Array.from(document.querySelectorAll('.page-section'));
+  const liensSekory = Array.from(document.querySelectorAll(
+    'a[href="#friperie"], a[href="#silhouettes"], a[href="#upcycling"], a[href="#demarche"], a[href="#contact"]'
+  ));
+  const liensMenuSekory = Array.from(document.querySelectorAll('.nav ul a[href^="#"]'));
+  const logosSekory = Array.from(document.querySelectorAll('a.logo'));
+
+  function afficherVueSekory(cible, majHistorique = true){
+    const vue = vuesSekory.has(cible) ? cible : 'accueil';
+    const vueInterne = vue !== 'accueil';
+
+    document.body.classList.toggle('vue-interne', vueInterne);
+    sectionsSekory.forEach(section => {
+      section.classList.toggle('page-active', section.id === vue);
+    });
+    liensMenuSekory.forEach(lien => {
+      if (lien.getAttribute('href') === '#' + vue) {
+        lien.setAttribute('aria-current', 'page');
+      } else {
+        lien.removeAttribute('aria-current');
+      }
+    });
+
+    if (majHistorique) {
+      const nouvelleAncre = vueInterne ? '#' + vue : window.location.pathname + window.location.search;
+      if (vueInterne) {
+        if (window.location.hash !== nouvelleAncre) history.pushState({vue}, '', nouvelleAncre);
+      } else if (window.location.hash) {
+        history.pushState({vue: 'accueil'}, '', nouvelleAncre);
+      }
+    }
+
+    window.scrollTo({top: 0, behavior: 'auto'});
+  }
+
+  liensSekory.forEach(lien => {
+    lien.addEventListener('click', evenement => {
+      evenement.preventDefault();
+      afficherVueSekory(lien.getAttribute('href').slice(1));
+    });
+  });
+
+  logosSekory.forEach(logo => {
+    logo.addEventListener('click', evenement => {
+      evenement.preventDefault();
+      afficherVueSekory('accueil');
+    });
+  });
+
+  window.addEventListener('popstate', () => {
+    afficherVueSekory(window.location.hash.slice(1), false);
+  });
+
+  afficherVueSekory(window.location.hash.slice(1), false);
+
   let compte = 0;
   const compteEl = document.getElementById('compte');
   const toast = document.getElementById('toast');
@@ -480,6 +547,7 @@
   catItems.forEach(item => {
     item.addEventListener('click', () => {
       filtreCat = item.dataset.cat;
+      afficherVueSekory('friperie');
       catItems.forEach(i => i.setAttribute('aria-checked', 'false'));
       item.setAttribute('aria-checked', 'true');
       appliquerFiltre();
