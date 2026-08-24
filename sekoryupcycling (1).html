@@ -494,7 +494,8 @@
     afficherVueSekory(window.location.hash.slice(1), false);
   });
 
-  afficherVueSekory(window.location.hash.slice(1), false);
+  history.replaceState({vue: 'accueil'}, '', window.location.pathname + window.location.search);
+  afficherVueSekory('accueil', false);
 
   let compte = 0;
   const compteEl = document.getElementById('compte');
